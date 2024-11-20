@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="navbar-logo">MiLogo</a>
+        <div id="hamburger-menu" class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#about" class="nav-link">Sobre mí</a></li>
+          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
+          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h1>Miguel Ortiz Coílla</h1>
+        <p>Analista de Datos | Científico de Datos | Especialista en BI</p>
+        <p>
+          Transformo datos complejos en soluciones estratégicas y accionables.
+        </p>
+        <a href="#projects" class="btn">Ver Proyectos</a>
+        <a href="#contact" class="btn btn-secondary">Contáctame</a>
+      </div>
+    </section>
+
+    <!-- Secciones About -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">Sobre mí</h2>
+
+        <div class="content">
+          <!-- Introducción Profesional -->
+          <div class="professional-intro">
+            <p>
+              Soy un profesional apasionado por el análisis de datos y la
+              inteligencia de negocios, con más de 7 años de experiencia
+              transformando datos complejos en insights accionables. Mi enfoque
+              metódico y analítico me ha permitido desarrollar soluciones
+              efectivas en diversos sectores como energía, telecomunicaciones y
+              servicios financieros.
+            </p>
+            <p>
+              Me especializo en encontrar patrones y oportunidades en los datos,
+              siempre buscando la optimización y la mejora continua. Mi objetivo
+              es crear valor tangible a través del análisis avanzado de datos,
+              automatización de procesos y desarrollo de modelos predictivos.
+            </p>
+          </div>
+
+          <!-- Separador -->
+          <div class="separator">
+            <div class="line"></div>
+            <i class="icon fas fa-code"></i>
+            <div class="line"></div>
+          </div>
+
+          <!-- Lado Personal -->
+          <div class="personal-side">
+            <p>
+              Más allá del mundo de los datos, me apasiona la música y encuentro
+              en la guitarra una forma de expresión creativa. Los videojuegos me
+              proporcionan un espacio para la resolución estratégica de
+              problemas y el pensamiento táctico, habilidades que complementan
+              mi perfil analítico.
+            </p>
+            <p>
+              Soy un ávido lector de ciencia ficción, con una especial
+              admiración por las obras de Isaac Asimov y Ray Bradbury. Sus
+              visiones del futuro y la tecnología han influido en mi manera de
+              abordar la innovación y el análisis de datos, siempre considerando
+              las implicaciones éticas y el impacto en la sociedad.
+            </p>
+          </div>
+
+          <!-- Cita -->
+          <div class="quote">
+            <blockquote>
+              "La satisfacción de entender cómo funcionan las cosas es uno de
+              los mayores regalos que nos da la tecnología y la ciencia."
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Iconos de intereses -->
+        <div class="interests">
+          <div class="interest">
+            <i class="fas fa-guitar"></i>
+            <span>Música</span>
+          </div>
+          <div class="interest">
+            <i class="fas fa-gamepad"></i>
+            <span>Gaming</span>
+          </div>
+          <div class="interest">
+            <i class="fas fa-book"></i>
+            <span>Lectura</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secciones Proyects -->
+
+    <section id="proyectos" class="projects-section">
+      <div class="container">
+        <h2 class="section-title">Proyectos</h2>
+
+        <!-- Barra de categorías -->
+        <div class="categories-bar">
+          <button class="category-btn active" data-category="all">Todos</button>
+          <button class="category-btn" data-category="data-analytics">
+            Data Analytics
+          </button>
+          <button class="category-btn" data-category="data-science">
+            Data Science
+          </button>
+          <button class="category-btn" data-category="data-visualization">
+            Data Visualization
+          </button>
+          <button class="category-btn" data-category="otros">Otros</button>
+        </div>
+
+        <!-- Grid de proyectos -->
+        <div id="projects-grid" class="projects-grid"></div>
+
+        <!-- Botón de "Mostrar más" -->
+        <div id="show-more-container" class="show-more-container">
+          <button id="show-more-btn" class="show-more-btn">Mostrar más</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secciones Proyects -->
+    <section id="habilidades" class="skills-section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="swiper skills-swiper">
+          <div class="swiper-wrapper">
+            <!-- Cada skill será un slide -->
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="/assets/icons/python.png" alt="Python" />
+                <span>Python</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="/assets/icons/PBI.png" alt="Power BI" />
+                <span>Power BI</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="/assets/icons/R.png" alt="R" />
+                <span>R</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="/assets/icons/React.png" alt="React" />
+                <span>React</span>
+              </div>
+            </div>
+            <!-- Repite para los demás skills -->
+          </div>
+          <!-- Controles de navegación -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secciones Contact -->
+
+    <section id="contacto" class="contact-section">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-description">
+          ¿Tienes un proyecto interesante o una oportunidad laboral? Me
+          encantaría conversar contigo.
+        </p>
+
+        <div class="contact-info">
+          <!-- Email -->
+          <a href="mailto:mortizcoilla@outlook.com" class="contact-link">
+            <span class="contact-email">mortizcoilla@outlook.com</span>
+          </a>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+          <a
+            href="https://linkedin.com/in/mortizcoilla"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+          >
+            <img src="../assets/icons/linkedin.png" alt="LinkedIn" />
+          </a>
+          <a
+            href="https://github.com/mortizcoilla"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+          >
+            <img src="../assets/icons/github.png" alt="GitHub" />
+          </a>
+          <a
+            href="https://wa.me/+56933293943"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="social-icon"
+          >
+            <img src="../assets/icons/whatsapp.png" alt="WhatsApp" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="container">
+        <!-- Copyright -->
+        <div class="footer-copyright">
+          © <span id="current-year"></span> Miguel Ortiz. Todos los derechos
+          reservados.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Seccion Final -->
+
+    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  </body>
+</html>
