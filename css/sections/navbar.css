@@ -73,29 +73,28 @@
 
 /* Estilo para pantallas móviles */
 @media (max-width: 768px) {
+  .navbar-container {
+    justify-content: center; /* Centrar el contenido en móviles */
+  }
+
   .hamburger-menu {
-    display: flex; /* Mostrar menú en móvil */
+    position: absolute;
+    right: 10px; /* Alinear hamburguesa al extremo derecho */
+    top: 10px;
   }
 
   .nav-links {
-    display: none; /* Ocultar menú inicialmente */
-    flex-direction: column; /* Alinear en columna */
-    align-items: flex-end; /* Alinear enlaces al extremo derecho */
-    background: rgba(7, 45, 68, 0.95); /* Fondo del menú desplegable */
+    display: none; /* Ocultar menú por defecto */
+    flex-direction: column;
+    align-items: center;
+    background: rgba(7, 45, 68, 0.95);
     position: absolute;
-    top: 100%; /* Posicionar debajo de la barra */
-    right: 0; /* Alinear con el borde derecho */
-    width: auto; /* Ancho ajustado al contenido */
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    top: 50px; /* Espacio debajo de la barra */
+    width: 100%; /* Ocupa el ancho completo */
+    padding: 10px 0;
   }
 
   .nav-links.open {
     display: flex; /* Mostrar menú al abrir */
-  }
-
-  .nav-link {
-    padding: 10px 0; /* Espaciado interno para enlaces */
-    text-align: right; /* Alinear texto a la derecha */
   }
 }
