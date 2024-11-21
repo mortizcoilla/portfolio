@@ -3,57 +3,36 @@
 /* ========================= */
 
 .navbar {
-  position: fixed; /* Fija la barra en la parte superior */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Ocupa todo el ancho de la pantalla */
-  z-index: 1000; /* Asegura que la barra esté por encima del contenido */
-  padding: 10px 20px; /* Espaciado interno */
-  display: flex; /* Usar flexbox para alinear contenido */
-  justify-content: flex-end; /* Alinea los elementos al extremo derecho */
-  align-items: center; /* Centra los elementos verticalmente */
-  background: rgba(7, 45, 68, 0.95); /* Color de fondo */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end; /* Alineación a la derecha en escritorio */
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(7, 45, 68, 0.95);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
-.navbar.transparent {
-  background: transparent; /* Fondo transparente */
-  box-shadow: none; /* Sin sombra */
-}
-
-.navbar.scrolled {
-  background: rgba(7, 45, 68, 0.95); /* Fondo sólido */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra visible */
-}
-
-.navbar-container {
-  width: 100%; /* Asegura que ocupe todo el ancho */
-  max-width: 1200px; /* Opcional: Establece un máximo para el contenido */
-  display: flex; /* Flexbox para alineación interna */
-  justify-content: flex-end; /* Alinea los elementos al extremo derecho */
-  align-items: center; /* Centra los elementos verticalmente */
-}
-
-/* Menú de navegación */
 .nav-links {
-  display: flex; /* Alinea los enlaces horizontalmente */
-  gap: 20px; /* Espaciado entre enlaces */
-  list-style: none; /* Elimina viñetas */
-  margin: 0; /* Elimina márgenes */
-  padding: 0; /* Elimina rellenos */
-  text-transform: uppercase; /* Letras en mayúsculas */
+  display: flex; /* Navegación horizontal en escritorio */
+  gap: 20px;
+  list-style: none;
 }
 
 .nav-link {
-  text-decoration: none; /* Elimina subrayados */
-  color: var(--white); /* Color blanco */
-  font-weight: normal; /* Peso de fuente normal */
-  transition: color 0.3s ease-in-out; /* Transición al pasar el cursor */
+  text-decoration: none;
+  color: var(--white);
+  font-weight: normal;
+  font-size: 1rem;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav-link:hover {
-  color: var(--butter-yellow); /* Cambia el color al pasar el cursor */
+  color: var(--butter-yellow);
 }
 
 /* Menú hamburguesa */
@@ -71,30 +50,57 @@
   border-radius: 2px;
 }
 
-/* Estilo para pantallas móviles */
-@media (max-width: 768px) {
-  .navbar-container {
-    justify-content: center; /* Centrar el contenido en móviles */
+/* ========================= */
+/* Barra de navegación transparente */
+/* ========================= */
+.navbar.transparent {
+  background: transparent; /* Fondo completamente transparente */
+  box-shadow: none; /* Sin sombra */
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+  background: rgba(7, 45, 68, 0.95); /* Fondo sólido */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra visible */
+}
+
+/* ========================= */
+/* Vista en Tablet y Móvil */
+/* ========================= */
+@media (max-width: 1024px) {
+  .navbar {
+    justify-content: center; /* Centra el contenido */
   }
 
   .hamburger-menu {
+    display: flex; /* Mostrar menú hamburguesa */
     position: absolute;
-    right: 10px; /* Alinear hamburguesa al extremo derecho */
-    top: 10px;
+    top: 15px;
+    left: 50%; /* Centrar horizontalmente */
+    transform: translateX(-50%);
   }
 
   .nav-links {
-    display: none; /* Ocultar menú por defecto */
+    display: none; /* Ocultar navegación horizontal por defecto */
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centrar elementos en el menú desplegable */
+    justify-content: center; /* Centrar verticalmente */
     background: rgba(7, 45, 68, 0.95);
-    position: absolute;
-    top: 50px; /* Espacio debajo de la barra */
-    width: 100%; /* Ocupa el ancho completo */
-    padding: 10px 0;
+    position: fixed; /* Fija el menú desplegable en la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa toda la pantalla */
+    z-index: 999; /* Asegura que esté por encima de otros elementos */
+    padding: 20px 0;
   }
 
   .nav-links.open {
-    display: flex; /* Mostrar menú al abrir */
+    display: flex; /* Mostrar navegación desplegable al abrir */
+  }
+
+  .nav-link {
+    font-size: 1.2rem; /* Aumenta el tamaño de los enlaces en el menú */
+    margin: 10px 0; /* Espaciado entre enlaces */
   }
 }

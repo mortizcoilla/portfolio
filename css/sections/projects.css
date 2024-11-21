@@ -26,7 +26,7 @@
 =========================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
   gap: 30px;
   margin-top: 20px;
 }
@@ -235,7 +235,20 @@
   width: 100%; /* Alinea los botones */
 }
 
+/* ===========================
+   Diseño adaptable
+=========================== */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
 @media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+  }
+
   .categories-bar {
     display: none; /* Oculta barra de categorías estándar */
   }
