@@ -3,6 +3,7 @@
 /* ========================= */
 
 .hero {
+  position: relative; /* Para permitir posicionar elementos dentro */
   height: 100vh;
   background: linear-gradient(
       to right,
@@ -24,6 +25,7 @@
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  z-index: 2; /* Asegura que se mantenga sobre el fondo */
 }
 
 .hero-content h1 {
@@ -41,6 +43,28 @@
   font-weight: normal; /* Quita negritas */
 }
 
+/* Contenedor de iconos en Hero */
+.hero-icons {
+  position: absolute; /* Para colocarlo en la parte baja */
+  bottom: 20px; /* Distancia desde el borde inferior */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translateX(-50%); /* Ajustar el centrado */
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  z-index: 2; /* Asegura que se vea sobre el fondo */
+}
+
+.hero-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-icons img:hover {
+  transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
 /* ===========================
    Estilos para tablets
 =========================== */
@@ -51,6 +75,11 @@
 
   .hero-content h2 {
     font-size: 1.3rem; /* Ajusta el subtítulo */
+  }
+
+  .hero-icons img {
+    width: 35px; /* Iconos ligeramente más pequeños */
+    height: 35px;
   }
 }
 
@@ -68,5 +97,14 @@
 
   .hero-content h2 {
     font-size: 1.2rem; /* Ajusta el tamaño del subtítulo */
+  }
+
+  .hero-icons img {
+    width: 30px; /* Iconos más pequeños */
+    height: 30px;
+  }
+
+  .hero-icons {
+    gap: 15px; /* Menor espacio entre iconos */
   }
 }
