@@ -1,34 +1,35 @@
 /* ========================= */
 /* Sección Hero */
 /* ========================= */
-
 .hero {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye contenido arriba y abajo */
+  align-items: center;
+  text-align: center;
   background: linear-gradient(
       to right,
       rgba(7, 45, 68, 0.9),
       rgba(6, 68, 105, 0.9)
     ),
     url("../../assets/images/hero-background.jpg") no-repeat center center/cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Distribuye los elementos verticalmente */
-  align-items: center;
-  text-align: center;
+  padding: 20px;
   color: var(--white);
-  padding: 20px; /* Espacio alrededor del contenido */
 }
 
 .hero-content {
+  flex-grow: 1; /* Expande el espacio para centrar verticalmente */
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 1rem; /* Espacio entre título y subtítulo */
-  margin-top: 50px; /* Espacio adicional para centrar contenido */
+  gap: 1rem;
 }
 
 .hero-content h1 {
-  font-size: 5rem;
+  font-size: 3rem;
+  margin-bottom: 10px;
   color: var(--white);
   text-transform: capitalize;
   font-weight: bold;
@@ -37,13 +38,14 @@
 .hero-content h2 {
   font-size: 1.5rem;
   color: var(--butter-yellow);
+  margin: 0;
   font-weight: normal;
 }
 
 /* Contenedor de iconos */
 .hero-icons {
   display: flex;
-  gap: 40px; /* Espaciado entre los iconos */
+  gap: 40px;
   justify-content: center;
 }
 
@@ -54,7 +56,7 @@
 }
 
 .hero-icons img:hover {
-  transform: scale(1.1); /* Efecto de agrandamiento */
+  transform: scale(1.1);
 }
 
 /* ===========================
@@ -62,7 +64,7 @@
 =========================== */
 @media (max-width: 1024px) {
   .hero-content h1 {
-    font-size: 4rem; /* Reduce el tamaño del título */
+    font-size: 2.5rem; /* Reduce el tamaño del título */
   }
 
   .hero-content h2 {
@@ -70,12 +72,8 @@
   }
 
   .hero-icons img {
-    width: 35px; /* Iconos ligeramente más pequeños */
+    width: 35px;
     height: 35px;
-  }
-
-  .hero-icons {
-    gap: 30px; /* Reduce el espacio entre iconos */
   }
 }
 
@@ -83,24 +81,20 @@
    Estilos para móviles
 =========================== */
 @media (max-width: 768px) {
-  .hero {
-    padding: 0 15px; /* Reduce el padding general */
-  }
-
   .hero-content h1 {
-    font-size: 3rem; /* Ajusta el tamaño del título */
+    font-size: 2rem; /* Ajusta el tamaño del título */
   }
 
   .hero-content h2 {
     font-size: 1.2rem; /* Ajusta el tamaño del subtítulo */
   }
 
-  .hero-icons img {
-    width: 30px; /* Iconos más pequeños */
-    height: 30px;
+  .hero-icons {
+    gap: 15px; /* Menor espacio entre iconos */
   }
 
-  .hero-icons {
-    gap: 20px; /* Espacio más reducido entre iconos */
+  .hero-icons img {
+    width: 30px;
+    height: 30px;
   }
 }
