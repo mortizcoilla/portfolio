@@ -48,53 +48,30 @@
 }
 
 /* ===========================
-   Estilos para tablets
+   Estilos para móviles y tablets (Horizontal para íconos)
 =========================== */
 @media (max-width: 1024px) {
-  .about .section-title {
-    font-size: 1.8rem; /* Reduce el tamaño del título */
-  }
-
-  .about .content p {
-    font-size: 0.95rem; /* Ajusta el tamaño de texto */
-    line-height: 1.6;
-  }
-
   .about-icons-container {
-    gap: 15px; /* Reduce el espacio entre los íconos */
+    flex-direction: row; /* Mantén la alineación horizontal */
+    justify-content: center;
+    gap: 15px; /* Espacio entre los íconos */
   }
 
   .about-icon {
-    width: 50px; /* Íconos más pequeños */
+    width: 50px; /* Ajusta el tamaño de los íconos */
     height: 50px;
   }
 }
 
-/* ===========================
-   Estilos para móviles
-=========================== */
 @media (max-width: 768px) {
-  .about {
-    padding: 2rem 1rem; /* Reduce el padding general */
-  }
-
-  .about .section-title {
-    font-size: 1.6rem; /* Ajusta el tamaño del título */
-    margin-bottom: 1.5rem;
-  }
-
-  .about .content p {
-    font-size: 0.9rem; /* Ajusta el tamaño de texto */
-    margin-bottom: 1rem;
-  }
-
   .about-icons-container {
-    flex-direction: column; /* Apila los íconos verticalmente */
-    gap: 10px;
+    flex-direction: row; /* Mantén la alineación horizontal */
+    justify-content: center;
+    gap: 10px; /* Reduce un poco el espacio para móviles */
   }
 
   .about-icon {
-    width: 45px; /* Íconos más pequeños */
+    width: 45px; /* Íconos más pequeños para pantallas más pequeñas */
     height: 45px;
   }
 }

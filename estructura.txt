@@ -32,9 +32,15 @@
         |-- vs_code.png
         |-- whatsapp.png
     |-- images
+        |-- data-engineering.jpeg
         |-- hero-background.jpg
+        |-- project1.jpg
+        |-- project2.jpg
+        |-- project3.jpg
+        |-- project4.jpg
+        |-- project5.jpg
+        |-- project6.jpg
 |-- css
-    |-- main-backup.css
     |-- main.css
     |-- sections
         |-- about.css
@@ -49,4 +55,13 @@
 |-- fonts
 |-- index.html
 |-- js
+    |-- main-backup.js
     |-- main.js
+    |-- modules
+        |-- categoryMenu.js
+        |-- deviceDetection.js
+        |-- footerYear.js
+        |-- navbar.js
+        |-- projectsLogic.js
+        |-- swiperConfig.js
+        |-- typingEffect.js
