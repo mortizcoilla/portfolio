@@ -83,7 +83,7 @@
       <div class="container">
         <h2 class="section-title">Proyectos</h2>
 
-        <!-- Barra de categorías -->
+        <!-- Barra de categorías para desktop -->
         <div class="categories-bar">
           <button class="category-btn active" data-category="all">Todos</button>
           <button class="category-btn" data-category="data-analytics">
@@ -98,8 +98,33 @@
           <button class="category-btn" data-category="otros">Otros</button>
         </div>
 
+        <!-- Menú hamburguesa para categorías en móviles -->
+        <div class="categories-hamburger">
+          <div class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="categories-list">
+            <button class="category-btn active" data-category="all">
+              Todos
+            </button>
+            <button class="category-btn" data-category="data-analytics">
+              Data Analytics
+            </button>
+            <button class="category-btn" data-category="data-science">
+              Data Science
+            </button>
+            <button class="category-btn" data-category="data-visualization">
+              Data Visualization
+            </button>
+            <button class="category-btn" data-category="otros">Otros</button>
+          </div>
+        </div>
+
         <!-- Grid de proyectos -->
         <div id="projects-grid" class="projects-grid">
+          <!-- Las 6 tarjetas -->
           <div class="project-card">
             <img
               src="assets/images/project1.jpg"
@@ -116,7 +141,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card">
             <img
               src="assets/images/project2.jpg"
@@ -133,7 +157,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card">
             <img
               src="assets/images/project3.jpg"
@@ -150,7 +173,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card">
             <img
               src="assets/images/project4.jpg"
@@ -167,7 +189,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card">
             <img
               src="assets/images/project5.jpg"
@@ -184,7 +205,6 @@
               </div>
             </div>
           </div>
-
           <div class="project-card">
             <img
               src="assets/images/project6.jpg"
@@ -309,7 +329,6 @@
                 <span>Dash</span>
               </div>
             </div>
-            <!-- Agrega más skills aquí -->
           </div>
           <!-- Controles del Swiper -->
           <div class="swiper-button-next"></div>
@@ -368,14 +387,10 @@
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
-        <div class="footer-copyright">
-          © <span id="current-year"></span> Miguel Ortiz. Todos los derechos
-          reservados.
-        </div>
+        <p>© 2024 Miguel Ortiz. Todos los derechos reservados.</p>
       </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
   </body>

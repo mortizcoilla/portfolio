@@ -1,6 +1,7 @@
 /* ========================= */
 /* Sección Sobre mí */
 /* ========================= */
+
 .about {
   padding: 4rem 1rem;
   background: #f9f9f9; /* Fondo gris uniforme muy claro */
@@ -27,32 +28,7 @@
   text-align: center;
 }
 
-.about .quote blockquote {
-  font-style: italic;
-  color: var(--light-blue);
-  font-size: 1.2rem;
-  margin-top: 2rem;
-  border-left: 4px solid var(--butter-yellow);
-  padding-left: 1rem;
-  text-align: center;
-}
-
-.about .quote blockquote::before {
-  content: "“";
-  font-size: 2rem;
-  color: var(--butter-yellow);
-  vertical-align: top;
-  margin-right: 5px;
-}
-
-.about .quote blockquote::after {
-  content: "”";
-  font-size: 2rem;
-  color: var(--butter-yellow);
-  vertical-align: bottom;
-  margin-left: 5px;
-}
-/* Nuevo contenedor con íconos */
+/* Contenedor de íconos */
 .about-icons-container {
   display: flex;
   justify-content: center;
@@ -69,4 +45,56 @@
 
 .about-icon:hover {
   transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+/* ===========================
+   Estilos para tablets
+=========================== */
+@media (max-width: 1024px) {
+  .about .section-title {
+    font-size: 1.8rem; /* Reduce el tamaño del título */
+  }
+
+  .about .content p {
+    font-size: 0.95rem; /* Ajusta el tamaño de texto */
+    line-height: 1.6;
+  }
+
+  .about-icons-container {
+    gap: 15px; /* Reduce el espacio entre los íconos */
+  }
+
+  .about-icon {
+    width: 50px; /* Íconos más pequeños */
+    height: 50px;
+  }
+}
+
+/* ===========================
+   Estilos para móviles
+=========================== */
+@media (max-width: 768px) {
+  .about {
+    padding: 2rem 1rem; /* Reduce el padding general */
+  }
+
+  .about .section-title {
+    font-size: 1.6rem; /* Ajusta el tamaño del título */
+    margin-bottom: 1.5rem;
+  }
+
+  .about .content p {
+    font-size: 0.9rem; /* Ajusta el tamaño de texto */
+    margin-bottom: 1rem;
+  }
+
+  .about-icons-container {
+    flex-direction: column; /* Apila los íconos verticalmente */
+    gap: 10px;
+  }
+
+  .about-icon {
+    width: 45px; /* Íconos más pequeños */
+    height: 45px;
+  }
 }

@@ -1,4 +1,7 @@
+/* ========================= */
 /* Sección Hero */
+/* ========================= */
+
 .hero {
   height: 100vh;
   background: linear-gradient(
@@ -71,4 +74,54 @@
 .hero-buttons .btn-secondary:hover {
   background: var(--butter-yellow);
   color: var(--dark-blue);
+}
+
+/* ===========================
+   Estilos para tablets
+=========================== */
+@media (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 4rem; /* Reduce el tamaño del título */
+  }
+
+  .hero-content h2 {
+    font-size: 1.3rem; /* Ajusta el subtítulo */
+  }
+
+  .hero-buttons {
+    gap: 1rem; /* Reduce el espacio entre botones */
+  }
+
+  .hero-buttons .btn {
+    padding: 8px 16px; /* Botones más pequeños */
+    font-size: 0.9rem;
+  }
+}
+
+/* ===========================
+   Estilos para móviles
+=========================== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 15px; /* Reduce el padding general */
+  }
+
+  .hero-content h1 {
+    font-size: 3rem; /* Ajusta el tamaño del título */
+  }
+
+  .hero-content h2 {
+    font-size: 1.2rem; /* Ajusta el tamaño del subtítulo */
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Apila los botones verticalmente */
+    gap: 10px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%; /* Botones ocupan todo el ancho */
+    font-size: 1rem; /* Ajusta el tamaño de fuente */
+    padding: 12px 0; /* Botones más altos */
+  }
 }

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const heroSection = document.getElementById("hero");
 
-  // Manejar transparencia de la barra de navegación
+  // Manejar transparencia de la barra de navegación al hacer scroll
   const handleNavbarTransparency = () => {
     if (heroSection) {
       const heroBottom = heroSection.getBoundingClientRect().bottom;
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Lógica del ícono de inicio y enlaces de navegación
+  // Desplazamiento suave para los enlaces de navegación
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
@@ -29,16 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
           block: "start",
         });
       }
-      navLinks.classList.remove("open"); // Cerrar el menú móvil
+      navLinks.classList.remove("open"); // Cierra el menú móvil
     });
   });
 
+  // Abrir o cerrar el menú móvil (hamburguesa)
   if (hamburgerMenu && navLinks) {
     hamburgerMenu.addEventListener("click", () => {
       navLinks.classList.toggle("open");
     });
   }
 
+  // Escuchar eventos de scroll para actualizar la transparencia de la barra
   window.addEventListener("scroll", handleNavbarTransparency);
   handleNavbarTransparency();
 
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const startTypingEffect = () => {
     if (!typingTexts.length || !typingEffectElement) return;
+
     const currentText = typingTexts[typingIndex];
     if (charIndex < currentText.length) {
       typingEffectElement.textContent += currentText[charIndex++];
@@ -73,59 +76,99 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startTypingEffect();
 
-  /* ===========================
-     Swiper (Skills)
-  =========================== */
-  new Swiper(".skills-swiper", {
-    slidesPerView: 2,
-    spaceBetween: 20,
-    autoplay: { delay: 3000 },
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-    breakpoints: { 320: { slidesPerView: 2 }, 768: { slidesPerView: 3 }, 1024: { slidesPerView: 5 } },
-  });
-
-  /* ===========================
-     Mostrar año en el footer
-  =========================== */
-  const currentYearElement = document.getElementById("current-year");
-  if (currentYearElement) currentYearElement.textContent = new Date().getFullYear();
+/* ===========================
+   Swiper (Skills)
+=========================== */
+new Swiper(".skills-swiper", {
+  slidesPerView: 1, // Predeterminado para móviles
+  spaceBetween: 20,
+  autoplay: { delay: 3000, disableOnInteraction: false },
+  pagination: { el: ".swiper-pagination", clickable: true },
+  navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+  breakpoints: {
+    320: { slidesPerView: 1, spaceBetween: 15 }, // Móviles
+    768: { slidesPerView: 2, spaceBetween: 20 }, // Tablets
+    1024: { slidesPerView: 4, spaceBetween: 25 }, // Escritorios
+  },
+});
 
   /* ===========================
      Lógica para la sección Proyectos
   =========================== */
   const projectCards = document.querySelectorAll(".project-card");
   const showMoreBtn = document.getElementById("show-more-btn");
-  const showLessBtn = document.getElementById("show-less-btn");
   const noMoreProjects = document.getElementById("no-more-projects");
-  let visibleCount = 3; // Número inicial de proyectos visibles
+
+  let visibleCount = getInitialVisibleCount();
+
+  function getInitialVisibleCount() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth <= 768) return 1; // Móviles
+    if (screenWidth <= 1024) return 2; // Tablets
+    return 6; // Escritorios
+  }
 
   const updateVisibility = () => {
     projectCards.forEach((card, index) => {
       card.style.display = index < visibleCount ? "block" : "none";
     });
 
-    // Mostrar u ocultar botones y mensaje
+    // Mostrar u ocultar el botón "Mostrar más" y el mensaje
     showMoreBtn.style.display = visibleCount >= projectCards.length ? "none" : "inline-block";
     noMoreProjects.style.display = visibleCount >= projectCards.length ? "block" : "none";
-    showLessBtn.style.display = visibleCount > 3 ? "inline-block" : "none";
   };
 
-  // Eventos de los botones
+  // Evento para mostrar más proyectos
   if (showMoreBtn) {
     showMoreBtn.addEventListener("click", () => {
-      visibleCount += 3; // Mostrar más proyectos
+      visibleCount += 3; // Mostrar 3 más
       updateVisibility();
     });
   }
 
-  if (showLessBtn) {
-    showLessBtn.addEventListener("click", () => {
-      visibleCount = Math.max(3, visibleCount - 3); // Reducir proyectos visibles
-      updateVisibility();
-    });
-  }
+  // Recalcular el número de tarjetas visibles al cambiar el tamaño de la ventana
+  window.addEventListener("resize", () => {
+    visibleCount = getInitialVisibleCount();
+    updateVisibility();
+  });
 
   // Inicializar la visibilidad
   updateVisibility();
+
+  /* ===========================
+     Menú de categorías tipo hamburguesa
+  =========================== */
+  const categoriesHamburger = document.querySelector(".categories-hamburger .hamburger-menu");
+  const categoriesList = document.querySelector(".categories-hamburger .categories-list");
+
+  if (categoriesHamburger && categoriesList) {
+    categoriesHamburger.addEventListener("click", () => {
+      categoriesList.classList.toggle("open");
+    });
+
+    // Manejar clics en las categorías
+    document.querySelectorAll(".categories-list .category-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        categoriesList.classList.remove("open"); // Cerrar el menú después de seleccionar
+        const category = btn.dataset.category;
+
+        projectCards.forEach((card) => {
+          card.style.display =
+            category === "all" || card.dataset.category === category ? "block" : "none";
+        });
+
+        // Reiniciar visibilidad en móviles
+        visibleCount = getInitialVisibleCount();
+        updateVisibility();
+      });
+    });
+  }
+
+  /* ===========================
+     Mostrar año en el footer
+  =========================== */
+  const currentYearElement = document.getElementById("current-year");
+  if (currentYearElement) {
+    currentYearElement.textContent = new Date().getFullYear();
+  }
 });
