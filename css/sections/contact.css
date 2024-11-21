@@ -1,0 +1,54 @@
+/* ========================= */
+/* Sección Contacto */
+/* ========================= */
+.contact-section {
+  padding: 4rem 1rem;
+  background: #f9f9f9; /* Fondo gris uniforme muy claro */
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1rem;
+  color: var(--medium-blue);
+  margin-bottom: 2rem;
+}
+
+.contact-info {
+  margin-bottom: 2rem;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--medium-blue);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.contact-link:hover {
+  color: var(--dark-blue);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-icon img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icon img:hover {
+  transform: scale(1.1);
+}

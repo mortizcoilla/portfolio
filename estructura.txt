@@ -1,0 +1,52 @@
+|-- assets
+    |-- icons
+        |-- alien.png
+        |-- aws.png
+        |-- azure.png
+        |-- book.png
+        |-- bug.png
+        |-- css.png
+        |-- docker.png
+        |-- gcp.png
+        |-- github.png
+        |-- google.png
+        |-- guitar.png
+        |-- html.png
+        |-- instagram.png
+        |-- js.png
+        |-- jupyter.png
+        |-- linkedin.png
+        |-- linux.png
+        |-- logo.png
+        |-- mail.png
+        |-- microsoft.png
+        |-- pbi.png
+        |-- plotly.png
+        |-- python.png
+        |-- r.png
+        |-- react.png
+        |-- spss.png
+        |-- sql.png
+        |-- stata.png
+        |-- videogames.png
+        |-- vs_code.png
+        |-- whatsapp.png
+    |-- images
+        |-- hero-background.jpg
+|-- css
+    |-- main-backup.css
+    |-- main.css
+    |-- sections
+        |-- about.css
+        |-- contact.css
+        |-- footer.css
+        |-- hero.css
+        |-- navbar.css
+        |-- projects.css
+        |-- skills.css
+|-- estructura.py
+|-- estructura.txt
+|-- fonts
+|-- index.html
+|-- js
+    |-- main.js

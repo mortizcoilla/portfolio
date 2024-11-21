@@ -1,0 +1,101 @@
+/* ========================= */
+/* Barra de navegación */
+/* ========================= */
+
+.navbar {
+  position: fixed; /* Fija la barra en la parte superior */
+  top: 0;
+  left: 0; /* Asegura que comience desde el borde izquierdo */
+  width: 100%; /* Ocupa todo el ancho de la pantalla */
+  z-index: 1000; /* Asegura que la barra esté por encima del contenido */
+  padding: 10px 20px; /* Espaciado interno */
+  display: flex; /* Usar flexbox para alinear contenido */
+  justify-content: flex-end; /* Alinea los elementos al extremo derecho */
+  align-items: center; /* Centra los elementos verticalmente */
+  background: rgba(7, 45, 68, 0.95); /* Color de fondo */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  transition: background 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.navbar.transparent {
+  background: transparent; /* Fondo transparente */
+  box-shadow: none; /* Sin sombra */
+}
+
+.navbar.scrolled {
+  background: rgba(7, 45, 68, 0.95); /* Fondo sólido */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra visible */
+}
+
+.navbar-container {
+  width: 100%; /* Asegura que ocupe todo el ancho */
+  max-width: 1200px; /* Opcional: Establece un máximo para el contenido */
+  display: flex; /* Flexbox para alineación interna */
+  justify-content: flex-end; /* Alinea los elementos al extremo derecho */
+  align-items: center; /* Centra los elementos verticalmente */
+}
+
+/* Menú de navegación */
+.nav-links {
+  display: flex; /* Alinea los enlaces horizontalmente */
+  gap: 20px; /* Espaciado entre enlaces */
+  list-style: none; /* Elimina viñetas */
+  margin: 0; /* Elimina márgenes */
+  padding: 0; /* Elimina rellenos */
+  text-transform: uppercase; /* Letras en mayúsculas */
+}
+
+.nav-link {
+  text-decoration: none; /* Elimina subrayados */
+  color: var(--white); /* Color blanco */
+  font-weight: normal; /* Peso de fuente normal */
+  transition: color 0.3s ease-in-out; /* Transición al pasar el cursor */
+}
+
+.nav-link:hover {
+  color: var(--butter-yellow); /* Cambia el color al pasar el cursor */
+}
+
+/* Menú hamburguesa */
+.hamburger-menu {
+  display: none; /* Ocultar en escritorio */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+}
+
+/* Estilo para pantallas móviles */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Mostrar menú en móvil */
+  }
+
+  .nav-links {
+    display: none; /* Ocultar menú inicialmente */
+    flex-direction: column; /* Alinear en columna */
+    align-items: flex-end; /* Alinear enlaces al extremo derecho */
+    background: rgba(7, 45, 68, 0.95); /* Fondo del menú desplegable */
+    position: absolute;
+    top: 100%; /* Posicionar debajo de la barra */
+    right: 0; /* Alinear con el borde derecho */
+    width: auto; /* Ancho ajustado al contenido */
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  }
+
+  .nav-links.open {
+    display: flex; /* Mostrar menú al abrir */
+  }
+
+  .nav-link {
+    padding: 10px 0; /* Espaciado interno para enlaces */
+    text-align: right; /* Alinear texto a la derecha */
+  }
+}

@@ -1,0 +1,14 @@
+/* ========================= */
+/* Footer */
+/* ========================= */
+.footer {
+  background: rgba(7, 45, 68, 0.95);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}

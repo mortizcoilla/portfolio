@@ -1,0 +1,54 @@
+/* ========================= */
+/* Sección Sobre mí */
+/* ========================= */
+.about {
+  padding: 4rem 1rem;
+  background: #f9f9f9; /* Fondo gris uniforme muy claro */
+  text-align: center;
+}
+
+.about .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about .section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  margin-bottom: 2rem;
+}
+
+.about .content p {
+  font-size: 1rem;
+  color: var(--medium-blue);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about .quote blockquote {
+  font-style: italic;
+  color: var(--light-blue);
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  border-left: 4px solid var(--butter-yellow);
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.about .quote blockquote::before {
+  content: "“";
+  font-size: 2rem;
+  color: var(--butter-yellow);
+  vertical-align: top;
+  margin-right: 5px;
+}
+
+.about .quote blockquote::after {
+  content: "”";
+  font-size: 2rem;
+  color: var(--butter-yellow);
+  vertical-align: bottom;
+  margin-left: 5px;
+}

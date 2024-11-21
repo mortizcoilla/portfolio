@@ -6,120 +6,76 @@
     <title>Portafolio</title>
     <link rel="stylesheet" href="css/main.css" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
   </head>
   <body>
-    <!-- Menú de navegación -->
-    <nav class="navbar">
+    <!-- Barra de navegación -->
+    <nav id="navbar" class="navbar">
       <div class="navbar-container">
-        <a href="#" class="navbar-logo">MiLogo</a>
-        <div id="hamburger-menu" class="hamburger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
         <ul id="nav-links" class="nav-links">
+          <li><a href="#hero" class="nav-link">Inicio</a></li>
           <li><a href="#about" class="nav-link">Sobre mí</a></li>
           <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
           <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
+        <div id="hamburger-menu" class="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </nav>
 
     <!-- Sección Hero -->
     <section id="hero" class="hero">
       <div class="hero-content">
-        <h1>Miguel Ortiz Coílla</h1>
-        <p>Analista de Datos | Científico de Datos | Especialista en BI</p>
-        <p>
-          Transformo datos complejos en soluciones estratégicas y accionables.
-        </p>
-        <a href="#projects" class="btn">Ver Proyectos</a>
-        <a href="#contact" class="btn btn-secondary">Contáctame</a>
+        <h1>Miguel Ortiz C.</h1>
+        <h2 id="typing-effect"></h2>
+        <div class="hero-buttons">
+          <a href="#proyectos" class="btn">Ver Proyectos</a>
+          <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+        </div>
       </div>
     </section>
 
-    <!-- Secciones About -->
+    <!-- Sección Sobre mí -->
     <section id="about" class="about">
       <div class="container">
         <h2 class="section-title">Sobre mí</h2>
-
         <div class="content">
-          <!-- Introducción Profesional -->
           <div class="professional-intro">
             <p>
-              Soy un profesional apasionado por el análisis de datos y la
-              inteligencia de negocios, con más de 7 años de experiencia
-              transformando datos complejos en insights accionables. Mi enfoque
-              metódico y analítico me ha permitido desarrollar soluciones
-              efectivas en diversos sectores como energía, telecomunicaciones y
-              servicios financieros.
-            </p>
-            <p>
-              Me especializo en encontrar patrones y oportunidades en los datos,
-              siempre buscando la optimización y la mejora continua. Mi objetivo
-              es crear valor tangible a través del análisis avanzado de datos,
-              automatización de procesos y desarrollo de modelos predictivos.
+              Me dedico al análisis de datos y la creación de soluciones que
+              ayudan a mejorar procesos en distintos sectores. Me gusta
+              encontrar formas prácticas de usar los datos para resolver
+              problemas y aportar valor.
             </p>
           </div>
-
-          <!-- Separador -->
-          <div class="separator">
-            <div class="line"></div>
-            <i class="icon fas fa-code"></i>
-            <div class="line"></div>
-          </div>
-
-          <!-- Lado Personal -->
           <div class="personal-side">
             <p>
-              Más allá del mundo de los datos, me apasiona la música y encuentro
-              en la guitarra una forma de expresión creativa. Los videojuegos me
-              proporcionan un espacio para la resolución estratégica de
-              problemas y el pensamiento táctico, habilidades que complementan
-              mi perfil analítico.
-            </p>
-            <p>
-              Soy un ávido lector de ciencia ficción, con una especial
-              admiración por las obras de Isaac Asimov y Ray Bradbury. Sus
-              visiones del futuro y la tecnología han influido en mi manera de
-              abordar la innovación y el análisis de datos, siempre considerando
-              las implicaciones éticas y el impacto en la sociedad.
+              En mi tiempo libre disfruto la música, leer ciencia ficción y
+              videojuegos. Estas actividades me inspiran y me ayudan a pensar de
+              forma creativa.
             </p>
           </div>
-
-          <!-- Cita -->
           <div class="quote">
             <blockquote>
-              "La satisfacción de entender cómo funcionan las cosas es uno de
-              los mayores regalos que nos da la tecnología y la ciencia."
+              "Siempre hay algo nuevo por aprender, y esa es la magia de la
+              tecnología."
             </blockquote>
-          </div>
-        </div>
-
-        <!-- Iconos de intereses -->
-        <div class="interests">
-          <div class="interest">
-            <i class="fas fa-guitar"></i>
-            <span>Música</span>
-          </div>
-          <div class="interest">
-            <i class="fas fa-gamepad"></i>
-            <span>Gaming</span>
-          </div>
-          <div class="interest">
-            <i class="fas fa-book"></i>
-            <span>Lectura</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Secciones Proyects -->
-
+    <!-- Sección Proyectos -->
     <section id="proyectos" class="projects-section">
       <div class="container">
         <h2 class="section-title">Proyectos</h2>
@@ -140,49 +96,219 @@
         </div>
 
         <!-- Grid de proyectos -->
-        <div id="projects-grid" class="projects-grid"></div>
+        <div id="projects-grid" class="projects-grid">
+          <div class="project-card">
+            <img
+              src="assets/images/project1.jpg"
+              alt="Proyecto 1"
+              class="project-image"
+            />
+            <div class="overlay">
+              <div class="project-content">
+                <h3 class="project-title">Proyecto 1</h3>
+                <p class="project-description">
+                  Análisis avanzado de datos financieros.
+                </p>
+                <a href="#" class="project-link">Ver más</a>
+              </div>
+            </div>
+          </div>
 
-        <!-- Botón de "Mostrar más" -->
-        <div id="show-more-container" class="show-more-container">
+          <div class="project-card">
+            <img
+              src="assets/images/project2.jpg"
+              alt="Proyecto 2"
+              class="project-image"
+            />
+            <div class="overlay">
+              <div class="project-content">
+                <h3 class="project-title">Proyecto 2</h3>
+                <p class="project-description">
+                  Análisis avanzado de datos financieros.
+                </p>
+                <a href="#" class="project-link">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="assets/images/project3.jpg"
+              alt="Proyecto 3"
+              class="project-image"
+            />
+            <div class="overlay">
+              <div class="project-content">
+                <h3 class="project-title">Proyecto 3</h3>
+                <p class="project-description">
+                  Análisis avanzado de datos financieros.
+                </p>
+                <a href="#" class="project-link">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="assets/images/project4.jpg"
+              alt="Proyecto 4"
+              class="project-image"
+            />
+            <div class="overlay">
+              <div class="project-content">
+                <h3 class="project-title">Proyecto 4</h3>
+                <p class="project-description">
+                  Análisis avanzado de datos financieros.
+                </p>
+                <a href="#" class="project-link">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="assets/images/project5.jpg"
+              alt="Proyecto 5"
+              class="project-image"
+            />
+            <div class="overlay">
+              <div class="project-content">
+                <h3 class="project-title">Proyecto 5</h3>
+                <p class="project-description">
+                  Análisis avanzado de datos financieros.
+                </p>
+                <a href="#" class="project-link">Ver más</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              src="assets/images/project6.jpg"
+              alt="Proyecto 6"
+              class="project-image"
+            />
+            <div class="overlay">
+              <div class="project-content">
+                <h3 class="project-title">Proyecto 6</h3>
+                <p class="project-description">
+                  Análisis avanzado de datos financieros.
+                </p>
+                <a href="#" class="project-link">Ver más</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contenedor de botones -->
+        <div class="button-container">
+          <p id="no-more-projects" class="no-more-projects">
+            No hay más proyectos para mostrar
+          </p>
           <button id="show-more-btn" class="show-more-btn">Mostrar más</button>
+          <button id="show-less-btn" class="show-less-btn">
+            Mostrar menos
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Secciones Proyects -->
+    <!-- Sección Habilidades -->
     <section id="habilidades" class="skills-section">
       <div class="container">
         <h2 class="section-title">Skills</h2>
+        <p class="section-description">
+          Contar con las herramientas adecuadas puede marcar una gran diferencia
+          en los resultados. Utilizo tecnologías como Python, SQL y R, además de
+          herramientas de visualización como Dash y Power BI, para analizar
+          datos, identificar patrones y proponer soluciones prácticas que se
+          ajusten a las necesidades.
+        </p>
+        <p class="section-description">
+          Asimismo, empleo React para desarrollar sitios web y aplicaciones
+          modernas que destacan por su dinamismo y atractivo visual. Mi meta es
+          combinar estas habilidades para transformar la información en
+          decisiones estratégicas que generen valor real.
+        </p>
+
+        <!-- Swiper Slider -->
         <div class="swiper skills-swiper">
           <div class="swiper-wrapper">
-            <!-- Cada skill será un slide -->
             <div class="swiper-slide">
               <div class="skill-item">
-                <img src="/assets/icons/python.png" alt="Python" />
+                <img src="assets/icons/linux.png" alt="Linux" />
+                <span>Linux</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/python.png" alt="Python" />
                 <span>Python</span>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="skill-item">
-                <img src="/assets/icons/PBI.png" alt="Power BI" />
-                <span>Power BI</span>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="skill-item">
-                <img src="/assets/icons/R.png" alt="R" />
+                <img src="assets/icons/r.png" alt="R" />
                 <span>R</span>
               </div>
             </div>
             <div class="swiper-slide">
               <div class="skill-item">
-                <img src="/assets/icons/React.png" alt="React" />
+                <img src="assets/icons/sql.png" alt="SQL" />
+                <span>SQL</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/html.png" alt="HTML" />
+                <span>HTML</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/css.png" alt="CSS" />
+                <span>CSS</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/js.png" alt="Javascript" />
+                <span>Javascript</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/react.png" alt="React" />
                 <span>React</span>
               </div>
             </div>
-            <!-- Repite para los demás skills -->
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/jupyter.png" alt="Jupyter" />
+                <span>Jupyter</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/vs_code.png" alt="Code" />
+                <span>Code</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/pbi.png" alt="PBI" />
+                <span>Power BI</span>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="skill-item">
+                <img src="assets/icons/plotly.png" alt="Plotly" />
+                <span>Dash</span>
+              </div>
+            </div>
+            <!-- Agrega más skills aquí -->
           </div>
-          <!-- Controles de navegación -->
+          <!-- Controles del Swiper -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
@@ -190,8 +316,7 @@
       </div>
     </section>
 
-    <!-- Secciones Contact -->
-
+    <!-- Sección Contacto -->
     <section id="contacto" class="contact-section">
       <div class="container">
         <h2 class="section-title">Contacto</h2>
@@ -207,7 +332,7 @@
           </a>
         </div>
 
-        <!-- Social Icons -->
+        <!-- Íconos Sociales -->
         <div class="social-icons">
           <a
             href="https://linkedin.com/in/mortizcoilla"
@@ -215,7 +340,7 @@
             rel="noopener noreferrer"
             class="social-icon"
           >
-            <img src="../assets/icons/linkedin.png" alt="LinkedIn" />
+            <img src="assets/icons/linkedin.png" alt="LinkedIn" />
           </a>
           <a
             href="https://github.com/mortizcoilla"
@@ -223,7 +348,7 @@
             rel="noopener noreferrer"
             class="social-icon"
           >
-            <img src="../assets/icons/github.png" alt="GitHub" />
+            <img src="assets/icons/github.png" alt="GitHub" />
           </a>
           <a
             href="https://wa.me/+56933293943"
@@ -231,17 +356,15 @@
             rel="noopener noreferrer"
             class="social-icon"
           >
-            <img src="../assets/icons/whatsapp.png" alt="WhatsApp" />
+            <img src="assets/icons/whatsapp.png" alt="WhatsApp" />
           </a>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-
     <footer class="footer">
       <div class="container">
-        <!-- Copyright -->
         <div class="footer-copyright">
           © <span id="current-year"></span> Miguel Ortiz. Todos los derechos
           reservados.
@@ -249,9 +372,8 @@
       </div>
     </footer>
 
-    <!-- Seccion Final -->
-
-    <script src="js/main.js"></script>
+    <!-- Scripts -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

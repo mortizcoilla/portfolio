@@ -1,0 +1,183 @@
+/* ========================= */
+/* Sección Proyectos */
+/* ========================= */
+
+/* ===========================
+   Título de la sección
+=========================== */
+.section-title {
+  padding: 1 1rem;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-blue);
+  margin-bottom: 20px;
+}
+
+/* ===========================
+   Fondo de la sección Proyectos
+=========================== */
+.projects-section {
+  padding: 50px 10%;
+  background: #f9f9f9; /* Fondo gris uniforme muy claro */
+}
+
+/* ===========================
+   Grid de proyectos
+=========================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* ===========================
+   Tarjetas de proyectos
+=========================== */
+.project-card {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-card .project-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.project-card:hover .project-image {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+}
+
+.project-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.project-card:hover .overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.project-card .project-content {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  text-align: center;
+  padding: 10px;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.project-link {
+  font-size: 0.9rem;
+  color: var(--butter-yellow);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: var(--white);
+}
+
+/* ===========================
+   Contenedor de botones y mensaje
+=========================== */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Apilar elementos en una columna */
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: center; /* Centrar verticalmente */
+  margin-top: 20px; /* Separar del resto del contenido */
+}
+
+.no-more-projects {
+  margin-bottom: 10px; /* Espaciado entre el mensaje y los botones */
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+  font-style: italic;
+}
+
+.show-more-btn,
+.show-less-btn {
+  padding: 10px 20px;
+  background-color: var(--butter-yellow);
+  color: var(--dark-blue);
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.show-more-btn:hover,
+.show-less-btn:hover {
+  background-color: var(--medium-blue);
+  transform: translateY(-2px);
+}
+
+.show-less-btn {
+  margin-top: 10px;
+}
+
+/* ===========================
+   Barra de categorías
+=========================== */
+.categories-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-btn {
+  padding: 8px 15px;
+  background-color: var(--light-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.category-btn.active {
+  background-color: var(--butter-yellow);
+  color: var(--dark-blue);
+}
+
+.category-btn:hover {
+  background-color: var(--medium-blue);
+  transform: scale(1.1);
+}

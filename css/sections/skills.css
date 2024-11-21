@@ -1,0 +1,103 @@
+/* ========================= */
+/* Sección Skills */
+/* ========================= */
+.skills-section {
+  padding: 4rem 1rem;
+  background: #f9f9f9; /* Fondo gris uniforme muy claro */
+  text-align: center;
+}
+
+.skills-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skills-section .section-title {
+  font-size: 2rem; /* Mismo tamaño que la sección 'Sobre mí' */
+  font-weight: bold;
+  color: var(--dark-blue);
+  margin-bottom: 1.5rem;
+  text-align: center; /* Título centrado */
+}
+
+.skills-section .section-description {
+  font-size: 1rem; /* Mismo tamaño que 'Sobre mí' */
+  color: var(--medium-blue);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  text-align: center; /* Descripción centrada */
+}
+
+.skills-swiper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* Slider (manteniendo el diseño) */
+.skills-swiper .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.skills-swiper .swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Centra el texto debajo del ícono */
+}
+
+.skill-item img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.5rem; /* Espaciado entre el ícono y el texto */
+  transition: transform 0.3s ease-in-out;
+}
+
+.skill-item img:hover {
+  transform: scale(1.1);
+}
+
+.skill-item span {
+  font-size: 1rem; /* Asegura consistencia en el tamaño */
+  font-weight: bold;
+  color: var(--dark-blue);
+  text-align: center;
+}
+
+/* Botones de navegación del slider */
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--medium-blue);
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: var(--butter-yellow);
+  transform: scale(1.2);
+}
+
+/* Paginación del slider */
+.swiper-pagination-bullet {
+  background: var(--medium-blue);
+  transition: background 0.3s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--butter-yellow);
+}
