@@ -1,5 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* ===========================
+     Detectar dispositivo mediante User Agent
+  =========================== */
+  const isMobileDevice = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
+  };
+
+  const isTabletDevice = () => {
+    const screenWidth = window.innerWidth;
+    return screenWidth >= 768 && screenWidth <= 1024;
+  };
+
+  if (isMobileDevice()) {
+    console.log("Dispositivo móvil detectado.");
+    document.body.classList.add("mobile");
+  } else if (isTabletDevice()) {
+    console.log("Tablet detectada.");
+    document.body.classList.add("tablet");
+  } else {
+    console.log("Dispositivo de escritorio detectado.");
+    document.body.classList.add("desktop");
+  }
+
+  /* ===========================
      Barra de navegación
   =========================== */
   const hamburgerMenu = document.getElementById("hamburger-menu");
@@ -76,21 +100,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startTypingEffect();
 
-/* ===========================
-   Swiper (Skills)
-=========================== */
-new Swiper(".skills-swiper", {
-  slidesPerView: 1, // Predeterminado para móviles
-  spaceBetween: 20,
-  autoplay: { delay: 3000, disableOnInteraction: false },
-  pagination: { el: ".swiper-pagination", clickable: true },
-  navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-  breakpoints: {
-    320: { slidesPerView: 1, spaceBetween: 15 }, // Móviles
-    768: { slidesPerView: 2, spaceBetween: 20 }, // Tablets
-    1024: { slidesPerView: 4, spaceBetween: 25 }, // Escritorios
-  },
-});
+  /* ===========================
+     Swiper (Skills)
+  =========================== */
+  new Swiper(".skills-swiper", {
+    slidesPerView: 1, // Predeterminado para móviles
+    spaceBetween: 20,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+    breakpoints: {
+      320: { slidesPerView: 1, spaceBetween: 15 }, // Móviles
+      768: { slidesPerView: 2, spaceBetween: 20 }, // Tablets
+      1024: { slidesPerView: 4, spaceBetween: 25 }, // Escritorios
+    },
+  });
 
   /* ===========================
      Lógica para la sección Proyectos
