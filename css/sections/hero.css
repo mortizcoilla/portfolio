@@ -3,7 +3,6 @@
 /* ========================= */
 
 .hero {
-  position: relative; /* Para permitir posicionar elementos dentro */
   height: 100vh;
   background: linear-gradient(
       to right,
@@ -13,24 +12,23 @@
     url("../../assets/images/hero-background.jpg") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* Distribuye los elementos verticalmente */
   align-items: center;
-  justify-content: center;
   text-align: center;
   color: var(--white);
-  padding: 0 20px;
+  padding: 20px; /* Espacio alrededor del contenido */
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  z-index: 2; /* Asegura que se mantenga sobre el fondo */
+  gap: 1rem; /* Espacio entre título y subtítulo */
+  margin-top: 50px; /* Espacio adicional para centrar contenido */
 }
 
 .hero-content h1 {
   font-size: 5rem;
-  margin-bottom: 5px;
   color: var(--white);
   text-transform: capitalize;
   font-weight: bold;
@@ -39,20 +37,14 @@
 .hero-content h2 {
   font-size: 1.5rem;
   color: var(--butter-yellow);
-  margin: 10px 0;
-  font-weight: normal; /* Quita negritas */
+  font-weight: normal;
 }
 
-/* Contenedor de iconos en Hero */
+/* Contenedor de iconos */
 .hero-icons {
-  position: absolute; /* Para colocarlo en la parte baja */
-  bottom: 20px; /* Distancia desde el borde inferior */
-  left: 50%; /* Centrar horizontalmente */
-  transform: translateX(-50%); /* Ajustar el centrado */
   display: flex;
-  gap: 40px;
+  gap: 40px; /* Espaciado entre los iconos */
   justify-content: center;
-  z-index: 2; /* Asegura que se vea sobre el fondo */
 }
 
 .hero-icons img {
@@ -81,6 +73,10 @@
     width: 35px; /* Iconos ligeramente más pequeños */
     height: 35px;
   }
+
+  .hero-icons {
+    gap: 30px; /* Reduce el espacio entre iconos */
+  }
 }
 
 /* ===========================
@@ -105,6 +101,6 @@
   }
 
   .hero-icons {
-    gap: 15px; /* Menor espacio entre iconos */
+    gap: 20px; /* Espacio más reducido entre iconos */
   }
 }
