@@ -41,16 +41,16 @@
         |-- w3.png
         |-- whatsapp.png
     |-- images
-        |-- data-engineering.jpeg
         |-- hero-background-1200.webp
-        |-- hero-background-1920.webp.webp
+        |-- hero-background-1920.webp
         |-- hero-background.jpg
-        |-- project1.jpg
-        |-- project2.jpg
-        |-- project3.jpg
-        |-- project4.jpg
-        |-- project5.jpg
-        |-- project6.jpg
+        |-- projects
+            |-- project1.jpg
+            |-- project2.jpg
+            |-- project3.jpg
+            |-- project4.jpg
+            |-- project5.jpg
+            |-- project6.jpg
 |-- css
     |-- main.css
     |-- sections

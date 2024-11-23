@@ -17,6 +17,19 @@
   background-size: cover; /* Asegura que la imagen cubra todo */
   padding: 20px;
   color: var(--white);
+  position: relative; /* Necesario para que los elementos hijos como #hero-particles funcionen correctamente */
+  overflow: hidden; /* Evita que partículas o contenido se salga */
+}
+
+/* Contenedor de partículas */
+#hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Por detrás del fondo actual */
+  pointer-events: none; /* Evita interferencias con la interacción del usuario */
 }
 
 .hero picture {
