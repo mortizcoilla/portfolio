@@ -1,19 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta Tags Básicas -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
+    <title>Portafolio de Miguel Ortiz</title>
+
+    <!-- Archivo CSS Principal -->
     <link rel="stylesheet" href="css/main.css" />
+
+    <!-- Fuentes de Google -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Swiper CSS -->
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+
+    <!-- Open Graph Metadata (SEO y Redes Sociales) -->
+    <meta property="og:title" content="Portafolio de Miguel Ortiz" />
+    <meta
+      property="og:description"
+      content="Explora mis proyectos de análisis de datos, ciencia de datos e inteligencia de negocios."
+    />
+    <meta
+      property="og:image"
+      content="https://mortizcoilla.github.io/portfolio/assets/images/hero-background.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://mortizcoilla.github.io/portfolio/"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Portafolio de Miguel Ortiz" />
+    <meta
+      name="twitter:description"
+      content="Explora mis proyectos de análisis de datos, ciencia de datos e inteligencia de negocios."
+    />
+    <meta
+      name="twitter:image"
+      content="https://mortizcoilla.github.io/portfolio/assets/images/hero-background.jpg"
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mortizcoilla.github.io/portfolio/" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/fav/fav32.png"
+    />
   </head>
+
   <body>
     <!-- Barra de navegación -->
     <nav id="navbar" class="navbar">
@@ -22,7 +70,7 @@
           <li><a href="#hero" class="nav-link">Inicio</a></li>
           <li><a href="#about" class="nav-link">Sobre mí</a></li>
           <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
           <li><a href="#contacto" class="nav-link">Contacto</a></li>
         </ul>
         <div id="hamburger-menu" class="hamburger-menu">
@@ -34,14 +82,34 @@
     </nav>
 
     <!-- Sección Hero -->
+    <!-- Sección Hero -->
     <section id="hero" class="hero">
+      <picture>
+        <!-- Imagen optimizada para dispositivos grandes -->
+        <source
+          srcset="assets/images/hero-background-1920.webp"
+          type="image/webp"
+          media="(min-width: 1024px)"
+        />
+        <!-- Imagen optimizada para dispositivos medianos y pequeños -->
+        <source
+          srcset="assets/images/hero-background-1200.webp"
+          type="image/webp"
+          media="(max-width: 1024px)"
+        />
+        <!-- Respaldo para navegadores sin soporte WebP -->
+        <img
+          src="assets/images/hero-background-1920.jpg"
+          alt="Hero Background"
+          class="hero-background"
+        />
+      </picture>
+
       <div class="hero-content">
         <h1>Miguel Ortiz C.</h1>
         <h2 id="typing-effect"></h2>
-        <!-- Efecto typing aquí -->
       </div>
 
-      <!-- Contenedor de iconos -->
       <div class="hero-icons">
         <a href="mailto:mortizcoilla@outlook.com">
           <img src="assets/icons/mail.png" alt="Correo electrónico" />
@@ -58,34 +126,107 @@
       </div>
     </section>
 
-    <!-- Sección Sobre mí -->
+    <!-- Sección Sobre Mi -->
     <section id="about" class="about">
       <div class="container">
         <h2 class="section-title">Sobre mí</h2>
+
         <div class="content">
-          <div class="professional-intro">
-            <p>
-              Me dedico al análisis de datos y la creación de soluciones que
-              ayudan a mejorar procesos en distintos sectores.
-            </p>
-          </div>
-          <div class="personal-side">
-            <p>
-              En mi tiempo libre disfruto la música, leer ciencia ficción y
-              videojuegos. Estas actividades me inspiran y me ayudan a pensar de
-              forma creativa.
-            </p>
-          </div>
+          <p>
+            Me dedico al análisis de datos y la creación de soluciones que
+            ayudan a mejorar procesos en distintos sectores. Me apasiona
+            transformar datos complejos en ideas prácticas y accionables para
+            resolver problemas y generar valor.
+          </p>
+          <p>
+            En mi tiempo libre disfruto de la música, leer historias de ciencia
+            ficción, explorar mundos a través de los videojuegos y compartir
+            momentos con mis gatos locos.
+          </p>
         </div>
-      </div>
-      <div class="about-icons-container">
-        <img src="assets/icons/guitar.png" alt="Guitarra" class="about-icon" />
-        <img src="assets/icons/alien.png" alt="Alien" class="about-icon" />
-        <img
-          src="assets/icons/videogames.png"
-          alt="Videojuegos"
-          class="about-icon"
-        />
+
+        <!-- Contenedor de íconos -->
+        <div class="about-icons-container">
+          <img src="assets/icons/guitar.png" alt="Música" class="about-icon" />
+          <img
+            src="assets/icons/alien.png"
+            alt="Ciencia ficción"
+            class="about-icon"
+          />
+          <img
+            src="assets/icons/videogames.png"
+            alt="Videojuegos"
+            class="about-icon"
+          />
+          <img src="assets/icons/cat.png" alt="Gatos" class="about-icon" />
+        </div>
+
+        <!-- Separador -->
+        <hr class="section-divider" />
+
+        <!-- Formación académica y profesional -->
+        <div class="content">
+          <h3 class="section-subtitle">Mi formación y experiencia</h3>
+          <p>
+            Cuento con varios años de experiencia profesional en análisis de
+            datos, inteligencia de negocios y ciencia de datos. Durante mi
+            trayectoria, he desarrollado modelos predictivos, automatizado
+            procesos y diseñado dashboards interactivos que convierten datos
+            complejos en decisiones estratégicas y efectivas.
+          </p>
+
+          <p>
+            Soy ingeniero industrial con doble maestría: una en Finanzas
+            Aplicadas y otra en Dirección de Operaciones y Logística. Además, he
+            obtenido múltiples certificaciones que respaldan mis habilidades
+            técnicas y estratégicas. Si deseas conocer más sobre ellas, puedes
+            consultarlas en los siguientes enlaces.
+          </p>
+        </div>
+
+        <!-- Contenedor de íconos para formación/profesión -->
+        <div class="about-icons-container">
+          <a
+            href="https://learn.microsoft.com/es-mx/users/mortizcoilla/"
+            target="_blank"
+            title="Certificaciones de Microsoft"
+          >
+            <img
+              src="assets/icons/microsoft.png"
+              alt="Microsoft"
+              class="about-icon"
+            />
+          </a>
+          <a
+            href="https://www.coursera.org/learner/mortizcoilla"
+            target="_blank"
+            title="Certificaciones de Coursera"
+          >
+            <img
+              src="assets/icons/coursera.png"
+              alt="Coursera"
+              class="about-icon"
+            />
+          </a>
+          <a
+            href="https://www.datacamp.com/portfolio/mortizcoilla"
+            target="_blank"
+            title="Certificaciones de Datacamp"
+          >
+            <img
+              src="assets/icons/datacamp.png"
+              alt="Datacamp"
+              class="about-icon"
+            />
+          </a>
+          <a
+            href="https://app.aluracursos.com/user/mortizcoilla"
+            target="_blank"
+            title="Certificaciones de Alura"
+          >
+            <img src="assets/icons/alura.png" alt="Alura" class="about-icon" />
+          </a>
+        </div>
       </div>
     </section>
 
@@ -93,6 +234,11 @@
     <section id="proyectos" class="projects-section">
       <div class="container">
         <h2 class="section-title">Proyectos</h2>
+        <p class="section-intro">
+          En esta sección encontrarás proyectos que reflejan mi pasión por el
+          análisis de datos y la resolución de problemas. Cada uno de ellos
+          representa un desafío superado. ¡Te invito a descubrirlos!
+        </p>
 
         <!-- Barra de categorías -->
         <div class="categories-bar">
@@ -109,12 +255,23 @@
           <button class="category-btn" data-category="otros">Otros</button>
         </div>
 
+        <!-- Dropdown para categorías (móvil y tablet) -->
+        <div class="categories-dropdown">
+          <select id="categories-select" class="categories-select">
+            <option value="all">Todos</option>
+            <option value="data-analytics">Data Analytics</option>
+            <option value="data-science">Data Science</option>
+            <option value="data-visualization">Data Visualization</option>
+            <option value="otros">Otros</option>
+          </select>
+        </div>
+
         <!-- Grid de proyectos -->
         <div id="projects-grid" class="projects-grid">
           <!-- Las tarjetas de proyectos -->
           <div class="project-card">
             <img
-              src="assets/images/project1.jpg"
+              src="assets/images/projects/project1.jpg"
               alt="Proyecto 1"
               class="project-image"
             />
@@ -130,7 +287,7 @@
           </div>
           <div class="project-card">
             <img
-              src="assets/images/project2.jpg"
+              src="assets/images/projects/project2.jpg"
               alt="Proyecto 2"
               class="project-image"
             />
@@ -146,7 +303,7 @@
           </div>
           <div class="project-card">
             <img
-              src="assets/images/project3.jpg"
+              src="assets/images/projects/project3.jpg"
               alt="Proyecto 3"
               class="project-image"
             />
@@ -162,7 +319,7 @@
           </div>
           <div class="project-card">
             <img
-              src="assets/images/project4.jpg"
+              src="assets/images/projects/project4.jpg"
               alt="Proyecto 4"
               class="project-image"
             />
@@ -178,7 +335,7 @@
           </div>
           <div class="project-card">
             <img
-              src="assets/images/project5.jpg"
+              src="assets/images/projects/project5.jpg"
               alt="Proyecto 5"
               class="project-image"
             />
@@ -194,7 +351,7 @@
           </div>
           <div class="project-card">
             <img
-              src="assets/images/project6.jpg"
+              src="assets/images/projects/project6.jpg"
               alt="Proyecto 6"
               class="project-image"
             />
@@ -224,7 +381,7 @@
     </section>
 
     <!-- Sección Habilidades -->
-    <section id="habilidades" class="skills-section">
+    <section id="skills" class="skills-section">
       <div class="container">
         <h2 class="section-title">Skills</h2>
         <p class="section-description">
@@ -353,7 +510,7 @@
             target="_blank"
             class="social-icon"
           >
-            <img src="assets/icons/github.png" alt="GitHub" />
+            <img src="assets/icons/github3.png" alt="GitHub" />
           </a>
           <!-- Icono de WhatsApp -->
           <a

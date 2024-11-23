@@ -5,26 +5,44 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye contenido arriba y abajo */
-  align-items: center;
+  justify-content: space-between;
   text-align: center;
   background: linear-gradient(
       to right,
       rgba(7, 45, 68, 0.9),
       rgba(6, 68, 105, 0.9)
     ),
-    url("../../assets/images/hero-background.jpg") no-repeat center center/cover;
+    url("../../assets/images/hero-background-1920.webp") no-repeat center
+      center/cover;
+  background-size: cover; /* Asegura que la imagen cubra todo */
   padding: 20px;
   color: var(--white);
 }
 
+.hero picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+.hero picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+}
+
 .hero-content {
-  flex-grow: 1; /* Expande el espacio para centrar verticalmente */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  max-width: 80%; /* Ajusta el ancho del texto */
+  margin: 0 auto;
 }
 
 .hero-content h1 {
@@ -40,9 +58,32 @@
   color: var(--butter-yellow);
   margin: 0;
   font-weight: normal;
+  display: inline-block;
+  min-width: 10ch;
+  max-width: 100%;
+  text-align: center;
+  visibility: visible;
+  min-height: 2.5rem; /* Asegura espacio para el texto completo */
 }
 
-/* Contenedor de iconos */
+#typing-effect::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 0.7s steps(2) infinite;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
 .hero-icons {
   display: flex;
   gap: 40px;
@@ -60,15 +101,27 @@
 }
 
 /* ===========================
-   Estilos para tablets
+   Estilos Responsivos
 =========================== */
+@media (max-width: 1200px) {
+  .hero {
+    background: linear-gradient(
+        to right,
+        rgba(7, 45, 68, 0.9),
+        rgba(6, 68, 105, 0.9)
+      ),
+      url("../../assets/images/hero-background-1200.webp") no-repeat center
+        center/cover;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-content h1 {
-    font-size: 2.5rem; /* Reduce el tamaño del título */
+    font-size: 2.5rem;
   }
 
   .hero-content h2 {
-    font-size: 1.3rem; /* Ajusta el subtítulo */
+    font-size: 1.3rem;
   }
 
   .hero-icons img {
@@ -77,20 +130,17 @@
   }
 }
 
-/* ===========================
-   Estilos para móviles
-=========================== */
 @media (max-width: 768px) {
   .hero-content h1 {
-    font-size: 2rem; /* Ajusta el tamaño del título */
+    font-size: 2rem;
   }
 
   .hero-content h2 {
-    font-size: 1.2rem; /* Ajusta el tamaño del subtítulo */
+    font-size: 1.2rem;
   }
 
   .hero-icons {
-    gap: 15px; /* Menor espacio entre iconos */
+    gap: 15px;
   }
 
   .hero-icons img {

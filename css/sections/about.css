@@ -47,6 +47,25 @@
   transform: scale(1.1); /* Efecto de agrandamiento */
 }
 
+/* Separador */
+.section-divider {
+  border: none;
+  height: 2px;
+  background: var(--gray-blue);
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 3rem auto; /* Espaciado superior e inferior */
+  width: 30%; /* Más estrecho y centrado */
+}
+
+/* Subtítulo */
+.section-subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-blue);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
 /* ===========================
    Estilos para móviles y tablets (Horizontal para íconos)
 =========================== */
@@ -61,6 +80,11 @@
     width: 50px; /* Ajusta el tamaño de los íconos */
     height: 50px;
   }
+
+  .section-divider {
+    margin: 2.5rem auto; /* Reduce el espaciado en tablets */
+    width: 90%; /* Ajusta el ancho */
+  }
 }
 
 @media (max-width: 768px) {
@@ -73,5 +97,10 @@
   .about-icon {
     width: 45px; /* Íconos más pequeños para pantallas más pequeñas */
     height: 45px;
+  }
+
+  .section-divider {
+    margin: 2rem auto; /* Espaciado más compacto */
+    width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
   }
 }

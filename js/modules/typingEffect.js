@@ -6,24 +6,24 @@ export function startTypingEffect() {
 
   function type() {
     if (charIndex < textArray[arrayIndex].length) {
-      typingElement.textContent += textArray[arrayIndex].charAt(charIndex);
+      typingElement.textContent = textArray[arrayIndex].substring(0, charIndex + 1); // Actualiza el texto
       charIndex++;
-      setTimeout(type, 100); // Ajusta la velocidad de escritura
+      setTimeout(type, 100); // Velocidad de escritura
     } else {
-      setTimeout(erase, 2000); // Espera antes de borrar
+      setTimeout(erase, 2000); // Pausa antes de borrar
     }
   }
 
   function erase() {
     if (charIndex > 0) {
-      typingElement.textContent = textArray[arrayIndex].substring(0, charIndex - 1);
+      typingElement.textContent = textArray[arrayIndex].substring(0, charIndex - 1); // Borra un carácter
       charIndex--;
-      setTimeout(erase, 50); // Ajusta la velocidad de borrado
+      setTimeout(erase, 50); // Velocidad de borrado
     } else {
-      arrayIndex = (arrayIndex + 1) % textArray.length;
-      setTimeout(type, 500); // Espera antes de escribir de nuevo
+      arrayIndex = (arrayIndex + 1) % textArray.length; // Cambia al siguiente texto
+      setTimeout(type, 500); // Pausa antes de escribir el siguiente
     }
   }
 
-  type();
+  type(); // Inicia el efecto
 }

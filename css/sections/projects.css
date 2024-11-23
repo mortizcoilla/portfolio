@@ -15,6 +15,19 @@
 }
 
 /* ===========================
+   Texto introductorio en Proyectos
+=========================== */
+.section-intro {
+  max-width: 800px; /* Igual que la sección About */
+  margin: 0 auto 2rem auto; /* Centrado horizontal con margen inferior */
+  font-size: 1rem;
+  color: var(--medium-blue);
+  line-height: 1.8; /* Igual al texto en About */
+  text-align: center;
+}
+
+
+/* ===========================
    Grid de proyectos
 =========================== */
 .projects-grid {
@@ -94,7 +107,7 @@
    Botones "Mostrar más" y "Mostrar menos"
 =========================== */
 .button-container {
-  margin: 2rem auto;
+  margin: 3rem auto;
   text-align: center;
 }
 
@@ -124,7 +137,17 @@
 }
 
 /* ===========================
-   Barra de categorías
+   Estilos para el mensaje "No hay más proyectos para mostrar"
+=========================== */
+.no-more-projects {
+  font-style: italic; 
+  font-size: 1rem; 
+  color: var(--dark-blue); 
+  margin-bottom: 1rem; /
+}
+
+/* ===========================
+   Barra de categorías (Escritorio)
 =========================== */
 .categories-bar {
   display: flex;
@@ -157,19 +180,51 @@
 }
 
 /* ===========================
+   Dropdown de categorías (Móviles y Tablets)
+=========================== */
+.categories-dropdown {
+  display: none; /* Oculto por defecto */
+  margin-bottom: 20px;
+}
+
+.categories-select {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--dark-blue);
+  font-size: 1rem;
+  color: var(--dark-blue);
+  background-color: var(--white);
+}
+
+/* ===========================
+   Ajustes del grid para escritorio
+=========================== */
+@media (min-width: 1025px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 30px; /* Márgenes moderados entre las tarjetas */
+    padding: 0 2rem; /* Margen lateral */
+  }
+}
+
+
+  .project-card {
+    height: 300px; /* Altura uniforme para las tarjetas */
+  }
+}
+
+/* ===========================
    Estilos para tablets
 =========================== */
 @media (max-width: 1024px) {
   .categories-bar {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    display: none; /* Ocultar barra horizontal */
   }
 
-  .category-btn {
-    width: 90%;
-    max-width: 300px;
-    text-align: center;
+  .categories-dropdown {
+    display: block; /* Mostrar dropdown */
   }
 
   .projects-grid {
@@ -181,18 +236,13 @@
    Estilos para móviles
 =========================== */
 @media (max-width: 768px) {
-  .categories-bar {
-    gap: 8px;
-  }
-
-  .category-btn {
-    width: 100%;
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .categories-select {
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
   .section-title {

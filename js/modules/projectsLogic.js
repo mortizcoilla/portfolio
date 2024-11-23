@@ -3,9 +3,12 @@ export function setupProjectsLogic() {
   const showMoreBtn = document.getElementById("show-more-btn");
   const showLessBtn = document.getElementById("show-less-btn");
   const noMoreProjects = document.getElementById("no-more-projects");
+  const projectsSection = document.getElementById("proyectos");
 
   let visibleCount = getInitialVisibleCount();
+  let activeCategory = "all"; // Categoría activa, por defecto "Todos"
 
+  // Función para obtener la cantidad inicial de proyectos visibles según el tamaño de pantalla
   function getInitialVisibleCount() {
     const screenWidth = window.innerWidth;
     if (screenWidth <= 768) return 1; // Móviles
@@ -13,20 +16,35 @@ export function setupProjectsLogic() {
     return 6; // Escritorios
   }
 
+  // Función para actualizar la visibilidad de las tarjetas
   function updateVisibility() {
-    projectCards.forEach((card, index) => {
-      card.style.display = index < visibleCount ? "block" : "none";
+    let visibleCards = 0;
+
+    projectCards.forEach((card) => {
+      const matchesCategory =
+        activeCategory === "all" || card.dataset.category === activeCategory;
+
+      if (matchesCategory && visibleCards < visibleCount) {
+        card.style.display = "block";
+        visibleCards++;
+      } else {
+        card.style.display = "none";
+      }
     });
 
     // Mostrar u ocultar los botones y el mensaje "No hay más proyectos"
     showMoreBtn.style.display =
-      visibleCount >= projectCards.length ? "none" : "inline-block";
+      visibleCards >= projectCards.length ? "none" : "inline-block";
 
     showLessBtn.style.display =
-      visibleCount > getInitialVisibleCount() ? "inline-block" : "none";
+      visibleCards >= projectCards.length && visibleCount > getInitialVisibleCount()
+        ? "inline-block"
+        : "none";
 
     noMoreProjects.style.display =
-      visibleCount >= projectCards.length ? "block" : "none";
+      visibleCards >= projectCards.length && visibleCount >= projectCards.length
+        ? "block"
+        : "none";
   }
 
   // Evento para mostrar más proyectos
@@ -37,11 +55,14 @@ export function setupProjectsLogic() {
     });
   }
 
-  // Evento para mostrar menos proyectos
+  // Evento para mostrar menos proyectos con scroll suave
   if (showLessBtn) {
     showLessBtn.addEventListener("click", () => {
       visibleCount = getInitialVisibleCount(); // Reinicia la cantidad visible
       updateVisibility();
+
+      // Realizar scroll suave al inicio de la sección proyectos
+      projectsSection.scrollIntoView({ behavior: "smooth" });
     });
   }
 

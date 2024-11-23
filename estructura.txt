@@ -1,14 +1,22 @@
 |-- assets
     |-- icons
         |-- alien.png
+        |-- alura.png
         |-- aws.png
         |-- azure.png
         |-- book.png
         |-- bug.png
+        |-- cat.png
+        |-- coursera.png
+        |-- credly.png
         |-- css.png
+        |-- datacamp.png
         |-- docker.png
+        |-- fav
         |-- gcp.png
         |-- github.png
+        |-- github2.png
+        |-- github3.png
         |-- google.png
         |-- guitar.png
         |-- html.png
@@ -30,9 +38,12 @@
         |-- stata.png
         |-- videogames.png
         |-- vs_code.png
+        |-- w3.png
         |-- whatsapp.png
     |-- images
         |-- data-engineering.jpeg
+        |-- hero-background-1200.webp
+        |-- hero-background-1920.webp.webp
         |-- hero-background.jpg
         |-- project1.jpg
         |-- project2.jpg
@@ -55,7 +66,6 @@
 |-- fonts
 |-- index.html
 |-- js
-    |-- main-backup.js
     |-- main.js
     |-- modules
         |-- categoryMenu.js
