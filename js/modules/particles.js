@@ -9,7 +9,7 @@ export function initParticles() {
 
     const ctx = canvas.getContext("2d");
     const particlesArray = [];
-    const numberOfParticles = 120;
+    const numberOfParticles = 80;
     const interactionRadius = 100;
 
     let mouse = {
@@ -22,8 +22,8 @@ export function initParticles() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
             this.size = Math.random() * 1 + 0.5;
-            this.speedX = Math.random() * 2 - 0.5;
-            this.speedY = Math.random() * 2 - 0.5;
+            this.speedX = Math.random() * 1 - 0.5;
+            this.speedY = Math.random() * 1 - 0.5;
         }
 
         update() {

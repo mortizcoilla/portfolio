@@ -18,14 +18,13 @@
    Texto introductorio en Proyectos
 =========================== */
 .section-intro {
-  max-width: 800px; /* Igual que la sección About */
-  margin: 0 auto 2rem auto; /* Centrado horizontal con margen inferior */
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
   font-size: 1rem;
   color: var(--medium-blue);
-  line-height: 1.8; /* Igual al texto en About */
+  line-height: 1.8;
   text-align: center;
 }
-
 
 /* ===========================
    Grid de proyectos
@@ -71,7 +70,7 @@
   color: white;
   padding: 15px;
   text-align: left;
-  transform: translateY(0); /* Posición inicial */
+  transform: translateY(0);
   transition: transform 0.3s ease-in-out;
 }
 
@@ -98,9 +97,7 @@
 
 /* Efecto de movimiento suave */
 .project-card:hover .project-content {
-  transform: translateY(
-    -10px
-  ); /* Mueve ligeramente hacia arriba al pasar el cursor */
+  transform: translateY(-10px);
 }
 
 /* ===========================
@@ -137,13 +134,13 @@
 }
 
 /* ===========================
-   Estilos para el mensaje "No hay más proyectos para mostrar"
+   Mensaje "No hay más proyectos para mostrar"
 =========================== */
 .no-more-projects {
-  font-style: italic; 
-  font-size: 1rem; 
-  color: var(--dark-blue); 
-  margin-bottom: 1rem; /
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--dark-blue);
+  margin-bottom: 1rem;
 }
 
 /* ===========================
@@ -199,25 +196,23 @@
 }
 
 /* ===========================
-   Ajustes del grid para escritorio
+   Ajustes responsivos
 =========================== */
+
+/* Escritorio */
 @media (min-width: 1025px) {
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
-    gap: 30px; /* Márgenes moderados entre las tarjetas */
-    padding: 0 2rem; /* Margen lateral */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 2rem;
   }
-}
-
 
   .project-card {
     height: 300px; /* Altura uniforme para las tarjetas */
   }
 }
 
-/* ===========================
-   Estilos para tablets
-=========================== */
+/* Tablets */
 @media (max-width: 1024px) {
   .categories-bar {
     display: none; /* Ocultar barra horizontal */
@@ -232,9 +227,7 @@
   }
 }
 
-/* ===========================
-   Estilos para móviles
-=========================== */
+/* Móviles */
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
