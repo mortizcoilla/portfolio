@@ -6,7 +6,7 @@ export function setupProjectsLogic() {
   const projectsSection = document.getElementById("proyectos");
 
   let visibleCount = getInitialVisibleCount();
-  let activeCategory = "all"; // Categoría activa, por defecto "Todos"
+  let activeCategory = "all";
 
   // Función para obtener la cantidad inicial de proyectos visibles según el tamaño de pantalla
   function getInitialVisibleCount() {
@@ -50,7 +50,7 @@ export function setupProjectsLogic() {
   // Evento para mostrar más proyectos
   if (showMoreBtn) {
     showMoreBtn.addEventListener("click", () => {
-      visibleCount += 3; // Mostrar 3 más
+      visibleCount += 3;
       updateVisibility();
     });
   }
@@ -58,7 +58,7 @@ export function setupProjectsLogic() {
   // Evento para mostrar menos proyectos con scroll suave
   if (showLessBtn) {
     showLessBtn.addEventListener("click", () => {
-      visibleCount = getInitialVisibleCount(); // Reinicia la cantidad visible
+      visibleCount = getInitialVisibleCount();
       updateVisibility();
 
       // Realizar scroll suave al inicio de la sección proyectos
